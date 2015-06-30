@@ -6,7 +6,7 @@
    <persistence-unit name="primary">    
       <jta-data-source>java:jboss/postgres</jta-data-source>
       <properties>
-		 <property name="jboss.entity.manager.factory.jndi.name" value="java:jboss/spring-quickstart/persistence" />
+       <property name="jboss.entity.manager.factory.jndi.name" value="java:jboss/spring-quickstart/persistence" />
          <!-- Properties for Hibernate -->
          <property name="hibernate.show_sql" value="false" />
       </properties>

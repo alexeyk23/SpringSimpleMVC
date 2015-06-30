@@ -23,12 +23,12 @@ import com.ya.simplemvc.model.Primitive;
 @SuppressWarnings("unused")
 public class HomeController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	/*private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	List<Primitive> primitives = new ArrayList<Primitive>();
+	/*List<Primitive> primitives = new ArrayList<Primitive>();
 	{
 		Primitive p = new Primitive();
 		p.setId(1);
@@ -53,7 +53,7 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );*/
 		//primitives.clear();
 		
-		model.addAttribute("primitives", primitives);		
+	/*	model.addAttribute("primitives", primitives);		
 		model.addAttribute("prim",new Primitive());
 		return "home";
 	}
@@ -64,5 +64,5 @@ public class HomeController {
 		return "redirect:/";
 		
 	}
-	
+	*/
 }

@@ -130,11 +130,16 @@
 		</dependency>
 		
 		<!-- Hibernate JPA -->
-		<dependency>
+		<!--<dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>persistence-api</artifactId>
 			<version>1.0</version>
-		</dependency>
+		</dependency>-->
+                <dependency>
+                    <groupId>org.hibernate.javax.persistence</groupId>
+                    <artifactId>hibernate-jpa-2.0-api</artifactId>
+                    <version>1.0.1.Final</version>
+                </dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -149,8 +154,7 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-commons-annotations</artifactId>
 			<version>3.3.0.ga</version>
-		</dependency>
-		       
+		</dependency>	
 	</dependencies>
     <build>
         <plugins>
