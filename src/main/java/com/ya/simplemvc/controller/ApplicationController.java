@@ -14,13 +14,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author Kunakovsky A. S.
  */
 @Controller
+@RequestMapping("/app")
 public class ApplicationController {
     @Autowired
     ApplicationService applicationService;
-    @RequestMapping(value = "/",method = RequestMethod.GET)
+    @RequestMapping(value = "/showall",method = RequestMethod.GET)
     public String home(ModelMap model) {
         List<Application> appList = applicationService.getAll();
         model.addAttribute("applist",appList);
-        return "home";//name of view file or address
+        return "/apps/showall";//name of view file or address
     }
 }

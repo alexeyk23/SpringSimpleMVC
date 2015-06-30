@@ -10,9 +10,6 @@
 <h1>
 	Hello world!  
 </h1>
-
-    <c:forEach items="${applist}" var="app">
-        ${app.nameApp}<br/>
-    </c:forEach>
+    <a href= "<c:url value="/app/showall"/>"> Applications</a>  
 </body>
 </html>
