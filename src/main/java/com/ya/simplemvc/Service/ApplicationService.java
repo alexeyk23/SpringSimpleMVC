@@ -1,6 +1,6 @@
 package com.ya.simplemvc.Service;
 
-import com.ya.simplemvc.DAO.ApplicationDao;
+import com.ya.simplemvc.dao.ApplicationDAO;
 import com.ya.simplemvc.model.Application;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +15,13 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class ApplicationService {
     @Autowired
-    ApplicationDao appDao;
-    public List<Application> getAll()
-    {
-        return appDao.findAll();                
+    ApplicationDAO appDao;
+    public List<Application> getAll() {
+        return appDao.findAll();
     }
+
+    public void add(Application a) {
+        appDao.addApp(a);
+    }
+    
 }
