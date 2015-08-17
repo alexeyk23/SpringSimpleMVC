@@ -8,6 +8,8 @@ package com.ya.simplemvc.model;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -33,11 +35,14 @@ public class Application implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "id_app_gen")
     @SequenceGenerator(name = "id_app_gen", sequenceName = "\"Application_id_app_seq\"")
     private int idApp; //id
+    
     @Column(name = "name_app")
     private String nameApp;
+    
     @OneToMany(mappedBy = "application")
     private Set<Permission> permissions = new HashSet<Permission>();
-    @ManyToMany(fetch = FetchType.EAGER)
+    
+    @ManyToMany(fetch = FetchType.EAGER,cascade={CascadeType.ALL})
     @JoinTable(name = "\"App_priv\"",
             joinColumns = {
                 @JoinColumn(name = "id_app", nullable = false, updatable = false)},

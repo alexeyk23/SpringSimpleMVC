@@ -18,7 +18,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class PrivilegeDAO extends AbstractFacade<Privilege> {
-     @Autowired
+	@PersistenceContext
     private EntityManager entityManager;
 
     @Override

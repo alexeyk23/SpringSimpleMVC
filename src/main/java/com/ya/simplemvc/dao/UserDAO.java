@@ -5,19 +5,21 @@
  */
 package com.ya.simplemvc.dao;
 
-import com.ya.simplemvc.model.Permission;
-import com.ya.simplemvc.model.Role;
-import com.ya.simplemvc.model.User;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Repository;
+
+import com.ya.simplemvc.model.Permission;
+import com.ya.simplemvc.model.Role;
+import com.ya.simplemvc.model.User;
 
 /**
  *
@@ -25,7 +27,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class UserDAO extends AbstractFacade<User> {
-    @Autowired
+	@PersistenceContext
     private EntityManager entityManager;
 
     @Override

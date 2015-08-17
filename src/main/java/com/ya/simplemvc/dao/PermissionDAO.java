@@ -22,7 +22,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class PermissionDAO extends AbstractFacade<Permission> {
-    @Autowired
+	@PersistenceContext
     private EntityManager entityManager;
 
     @Override

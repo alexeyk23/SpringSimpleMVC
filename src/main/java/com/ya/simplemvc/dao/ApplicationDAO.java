@@ -5,12 +5,6 @@
  */
 package com.ya.simplemvc.dao;
 
-import com.ya.simplemvc.model.Application;
-import com.ya.simplemvc.model.Permission;
-import com.ya.simplemvc.model.Privilege;
-import com.ya.simplemvc.model.Role;
-import com.ya.simplemvc.model.User;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -18,9 +12,14 @@ import java.util.Set;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import net.sf.ehcache.constructs.asynchronous.Command;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.ya.simplemvc.model.Application;
+import com.ya.simplemvc.model.Permission;
+import com.ya.simplemvc.model.Privilege;
+import com.ya.simplemvc.model.Role;
 
 /**
  * Класс ApplicationDAO 
@@ -42,12 +41,15 @@ public class ApplicationDAO extends AbstractFacade<Application> {
      * @return true, если добавлено приложение
      */
     public boolean addApp(Application app) {
-        Query q = entityManager.createQuery("SELECT a FROM Application a WHERE a.nameApp=?1 ")
-                .setParameter(1, app.getNameApp());
-        if (q.getResultList().size() > 0) {
-            return false;
-        }
-        super.edit(app);
+        Query q = entityManager.createQuery("SELECT a FROM Application a");
+//                .setParameter(1, app.getNameApp());
+        @SuppressWarnings("unused")
+		List aaa  =q.getResultList();
+//        int n = q.getResultList().size();
+//        if (n > 0) {
+//            return false;
+//        }
+        entityManager.persist(app);
         return true;
     }
     /**

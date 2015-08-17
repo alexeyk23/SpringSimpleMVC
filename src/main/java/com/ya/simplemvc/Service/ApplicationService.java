@@ -12,14 +12,14 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Kunakovsky A. S.
  */
 @Service
-@Transactional
 public class ApplicationService {
     @Autowired
     ApplicationDAO appDao;
+    @Transactional
     public List<Application> getAll() {
         return appDao.findAll();
     }
-
+    @Transactional
     public void add(Application a) {
         appDao.addApp(a);
     }

@@ -25,7 +25,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class RoleDAO extends AbstractFacade<Role> {
-    @Autowired
+	@PersistenceContext
     private EntityManager entityManager;
 
     @Override
